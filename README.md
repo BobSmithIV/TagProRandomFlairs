@@ -1,4 +1,7 @@
 # TagProRandomFlairs
+
+![alt tag](https://raw.githubusercontent.com/BobSmithIV/TagProRandomFlairs/master/Random%20Flairs.PNG)
+
 This userscript will automatically choose a random flair for you to wear each game. 
 
 Only flairs you've earned will be available (obviously).  Note that it won't change your flair if you're PUB-ing in a group.  
