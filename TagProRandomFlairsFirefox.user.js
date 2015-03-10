@@ -84,8 +84,9 @@ if (document.URL.substring(document.URL.search('.com/')+5).length===0){
             url = elements[i].href;
         }
     }
-	  profilePage = url;
-    GM_setValue('profilePage',profilePage);
+    var n = url.lastIndexOf('/');
+    var profileNum = url.substring(n + 1);
+    GM_setValue('profilePage',profileNum);
     GM_setValue('inGroup','f');
     GM_setValue('randomizeState','unrandomized');
 }
@@ -94,7 +95,7 @@ if (document.URL.substring(document.URL.search('.com/')+5).length===0){
 //if you're starting a new game and aren't in a group, go to the profile to randomize flairs
 if(document.URL.search('games/find')>=0 && GM_getValue('inGroup')!='t' && GM_getValue('randomizeState')=='unrandomized') {
     GM_setValue('randomizeState','sentToRandomizeFromJoiner');
-    window.location.href = GM_getValue('profilePage');
+    window.location.href = 'http://tagpro-'+GM_getValue('server')+'.koalabeast.com/profile/'+GM_getValue('profileNum');
 }
 
 //if you've just joined/rejoined a group, go to the profile to randomize flairs
@@ -102,7 +103,7 @@ if(document.URL.match(/groups\/./) && document.URL.search('create')<0 && GM_getV
     GM_setValue('groupName',window.location.href.substring(window.location.href.lastIndexOf('/')+1));
     GM_setValue('randomizeState','sentToRandomizeFromGroup');
     GM_setValue('inGroup','t');
-    window.location.href = GM_getValue('profilePage');
+    window.location.href = 'http://tagpro-'+GM_getValue('server')+'.koalabeast.com/profile/'+GM_getValue('profileNum');
 }
 
 
