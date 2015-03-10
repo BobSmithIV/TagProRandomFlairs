@@ -1,4 +1,4 @@
-﻿// ==UserScript==
+// ==UserScript==
 // @name          Random flairs
 // @namespace     http://www.reddit.com/user/Bob_Smith_IV/
 // @description   Randomly choose a new flair each game
@@ -28,13 +28,13 @@ true,	// So Very Scary
 true,	// Daryl Would Be Proud
 true,   // Happy 2nd Birthday TagPro
 true,   // Tower 1-1 Complete
-true,	// Bacon (6°)
-true,	// Moon (11°)
-true,	// Freezing (32°)
-true,	// Dolphin (42°)
-true,	// Alien (51°)
-true,	// Road Sign (66°)
-true,	// Peace (69°)
+false,	// Bacon (6°)
+false,	// Moon (11°)
+false,	// Freezing (32°)
+false,	// Dolphin (42°)
+false,	// Alien (51°)
+false,	// Road Sign (66°)
+false,	// Peace (69°)
 true,	// Flux Capacitor (88°)
 true,	// Microphone (98°)
 true,	// Boiling (100°)
@@ -82,7 +82,7 @@ if (document.URL.substring(document.URL.search('.com/')+5).length===0){
 	    var n = url.lastIndexOf('/');
 	    var profileNum = url.substring(n + 1);
 	    profilePage = 'http://tagpro-'+GM_getValue('server')+'.koalabeast.com/profile/'+profileNum;
-	    GM_setValue('profilePage',profilePage);
+	    GM_setValue('profileNum',profileNum);
 	}
     GM_setValue('randomizeState','unrandomized');
 }
@@ -91,20 +91,20 @@ if (document.URL.substring(document.URL.search('.com/')+5).length===0){
 //if you're starting a new game and aren't in a group, go to the profile to randomize flairs
 if(document.URL.search('games/find')>=0 && !(tagpro.group.socket) && GM_getValue('randomizeState')=='unrandomized') {
     GM_setValue('randomizeState','sentToRandomizeFromJoiner');
-    window.location.href = GM_getValue('profilePage');
+    window.location.href = 'http://tagpro-'+GM_getValue('server')+'.koalabeast.com/profile/'+GM_getValue('profileNum');
 }
 
 //if you've just joined/rejoined a group, go to the profile to randomize flairs
 if(document.URL.match(/groups\/./) && document.URL.search('create')<0 && GM_getValue('randomizeState')=='unrandomized') {
     GM_setValue('groupName',window.location.href.substring(window.location.href.lastIndexOf('/')+1));
     GM_setValue('randomizeState','sentToRandomizeFromGroup');
-    window.location.href = GM_getValue('profilePage');
+    window.location.href = 'http://tagpro-'+GM_getValue('server')+'.koalabeast.com/profile/'+GM_getValue('profileNum');
 }
 
 
 //if you've been sent to the profile to randomize flairs, pick any available flair at random, then go back to where you came from
 if( document.URL.search('profile') >= 0 && (GM_getValue('randomizeState').search('sentToRandomize')>=0)) {
-    
+
     //randomly select a flair to use
     elements = document.getElementsByTagName('input');
     flairs = [];
