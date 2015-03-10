@@ -28,13 +28,13 @@ true,	// So Very Scary
 true,	// Daryl Would Be Proud
 true,   // Happy 2nd Birthday TagPro
 true,   // Tower 1-1 Complete
-false,	// Bacon (6°)
-false,	// Moon (11°)
-false,	// Freezing (32°)
-false,	// Dolphin (42°)
-false,	// Alien (51°)
-false,	// Road Sign (66°)
-false,	// Peace (69°)
+true,	// Bacon (6°)
+true,	// Moon (11°)
+true,	// Freezing (32°)
+true,	// Dolphin (42°)
+true,	// Alien (51°)
+true,	// Road Sign (66°)
+true,	// Peace (69°)
 true,	// Flux Capacitor (88°)
 true,	// Microphone (98°)
 true,	// Boiling (100°)
@@ -81,7 +81,6 @@ if (document.URL.substring(document.URL.search('.com/')+5).length===0){
 	if(url !== undefined) {
 	    var n = url.lastIndexOf('/');
 	    var profileNum = url.substring(n + 1);
-	    profilePage = 'http://tagpro-'+GM_getValue('server')+'.koalabeast.com/profile/'+profileNum;
 	    GM_setValue('profileNum',profileNum);
 	}
     GM_setValue('randomizeState','unrandomized');
