@@ -28,6 +28,7 @@ true,	// So Very Scary
 true,	// Daryl Would Be Proud
 true,   // Happy 2nd Birthday TagPro
 true,   // Tower 1-1 Complete
+true,   // Good and Lucky
 true,	// Bacon (6°)
 true,	// Moon (11°)
 true,	// Freezing (32°)
@@ -54,7 +55,7 @@ true	// Pi (314°)
 
 //create the flair rotation
 var flairNames = ['special.developer','special.helper','special.supporter','special.supporter2','special.supporter3','special.contest','boards.month','boards.week','boards.day',
-                  'event.birthday','event.stPatricksDay','event.aprilFoolsDay','event.easter','event.hacked','event.halloween','event.survivor', 'event.birthday2', 'event.platformer',
+                  'event.birthday','event.stPatricksDay','event.aprilFoolsDay','event.easter','event.hacked','event.halloween','event.survivor', 'event.birthday2', 'event.platformer', 'event.stPatricksDay2',
                   'degree.bacon','degree.moon','degree.freezing','degree.dolphin','degree.alien','degree.roadsign','degree.peace','degree.flux','degree.microphone','degree.boiling',
                   'degree.dalmations','degree.abc','degree.love','degree.pokemon','degree.phi','degree.uturn','degree.world','degree.bowling','degree.pi'];
 var flairRotation = [];
