@@ -15,4 +15,4 @@ On Firefox: As above, but you should have [Greasemonkey](https://addons.mozilla.
 
 *****
 
-Last updated 9/2.  Compatible with all flairs up to and including the 2nd birthday event flairs.  
+Last updated 17/31/15.  Compatible with all flairs up to and including the 2nd St Patrick's Day event flair.  
