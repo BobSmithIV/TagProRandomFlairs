@@ -7,6 +7,7 @@
 // @version       1.1
 // @grant         GM_getValue
 // @grant         GM_setValue
+// @downloadURL   https://raw.githubusercontent.com/BobSmithIV/TagProRandomFlairs/master/TagProRandomFlairsFirefox.user.js
 // ==/UserScript==
 
 var flairsToInclude = [	//Flairs to include.  Change the 'true' to 'false' to remove that flair from the flair rotation.  
