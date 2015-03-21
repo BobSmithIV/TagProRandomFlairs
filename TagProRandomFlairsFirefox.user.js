@@ -1,13 +1,13 @@
 // ==UserScript==
-// @name          Random flairs
+// @name          Random flairs (Firefox version)
 // @namespace     http://www.reddit.com/user/Bob_Smith_IV/
 // @description   Randomly choose a new flair each game
 // @include       http://tagpro-*.koalabeast.com*
-// @author        BobSmithIV, with some code inspired by ballparts' extensions
+// @author        BobSmithIV
 // @version       2.0
 // @grant         GM_getValue
 // @grant         GM_setValue
-// @downloadURL   https://raw.githubusercontent.com/BobSmithIV/TagProRandomFlairs/master/TagProRandomFlairsChrome.user.js
+// @downloadURL   https://raw.githubusercontent.com/BobSmithIV/TagProRandomFlairs/master/TagProRandomFlairsFirefox.user.js
 // ==/UserScript==
 
 //the name TagPro gives to each of the flairs
