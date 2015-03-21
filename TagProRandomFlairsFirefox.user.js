@@ -56,7 +56,7 @@ if (document.URL.substring(document.URL.search('.com/') + 5).length === 0) {
     }
     var n = url.lastIndexOf('/');
     var profileNum = url.substring(n + 1);
-    GM_setValue('profilePage', profileNum);
+    GM_setValue('profileNum', profileNum);
     GM_setValue('inGroup', 'f');
     GM_setValue('randomizeState', 'unrandomized');
 }
