@@ -161,7 +161,7 @@ if (document.URL.search(':80') >= 0) {
 function getBoard() {
     var x = document.getElementsByClassName("board");
     for (var i = x.length - 1; i >= 0; i--) {
-        if (x[i].childNodes[0].childNodes[0].childNodes[1].innerText == "Award") {
+        if (x[i].childNodes[0].childNodes[0].childNodes[1].innerHTML == "Award") {
             return x[i];
         }
     }
