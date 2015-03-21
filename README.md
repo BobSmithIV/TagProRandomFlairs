@@ -6,7 +6,7 @@ This userscript will automatically choose a random flair for you to wear each ga
 
 Only flairs you've earned will be available (obviously).  Note that it won't change your flair if you're PUB-ing in a group.  
 
-You can customize the userscript and choose which of your flairs to include in the flair rotation by simply editing the section at the start of the userscript.
+You can choose which of your flairs to include in the flair rotation by going to your profile page and selecting only those which you wish to use.
 
 To install this script:
 On Chrome: Ensure you have [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en) installed, then simply select the [Chrome version of the userscript](https://github.com/BobSmithIV/TagProRandomFlairs/blob/master/TagProRandomFlairsChrome.user.js)  and click raw.  Tampermonkey should then automatically install the userscript for you.  
