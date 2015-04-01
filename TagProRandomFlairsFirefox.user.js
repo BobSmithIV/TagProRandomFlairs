@@ -12,22 +12,22 @@
 
 //the name TagPro gives to each of the flairs
 var flairNames = ['special.developer', 'special.helper', 'special.supporter', 'special.supporter2', 'special.supporter3', 'special.contest', 'boards.month', 'boards.week', 'boards.day',
-    'event.birthday', 'event.stPatricksDay', 'event.aprilFoolsDay', 'event.easter', 'event.hacked', 'event.halloween', 'event.survivor', 'event.birthday2', 'event.platformer', 'event.stPatricksDay2',
+    'event.birthday', 'event.stPatricksDay', 'event.aprilFoolsDay', 'event.easter', 'event.hacked', 'event.halloween', 'event.survivor', 'event.birthday2', 'event.platformer', 'event.stPatricksDay2', 'event.aprilFoolsDay2',
     'degree.bacon', 'degree.moon', 'degree.freezing', 'degree.dolphin', 'degree.alien', 'degree.roadsign', 'degree.peace', 'degree.flux', 'degree.microphone', 'degree.boiling',
     'degree.dalmatians', 'degree.abc', 'degree.love', 'degree.pokemon', 'degree.phi', 'degree.uturn', 'degree.world', 'degree.bowling', 'degree.pi'
 ];
 
 //intialize variables the first time the script is run
-if (!GM_getValue('savedFlairRotation')) {
+if (!GM_getValue('savedFlairRotation1')) {
     GM_setValue('randomizeState', 'unrandomized');
-    GM_setValue('savedFlairRotation', new Array(flairNames.length + 1).join('1'));
+    GM_setValue('savedFlairRotation1', new Array(flairNames.length + 1).join('1'));
     GM_setValue('inGroup', 'f');
 }
 
 //fill the array from the saved string (silly TamperMonkey can't store arrays)
 var flairsToInclude = [];
 for (var i = 0; i < flairNames.length; i++) {
-    if (GM_getValue('savedFlairRotation').charAt(i) == '1') {
+    if (GM_getValue('savedFlairRotation1').charAt(i) == '1') {
         flairsToInclude[i] = true;
     } else {
         flairsToInclude[i] = false;
@@ -113,7 +113,7 @@ if (document.URL.search('profile') >= 0) {
                     for (var j = 0; j < flairsToInclude.length; j++) {
                         stringified = stringified + (flairsToInclude[j] ? '1' : '0');
                     }
-                    GM_setValue('savedFlairRotation', stringified);
+                    GM_setValue('savedFlairRotation1', stringified);
                 };
             }
         }
