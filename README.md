@@ -15,4 +15,4 @@ On Firefox: As above, but you should have [Greasemonkey](https://addons.mozilla.
 
 *****
 
-Last updated 7/4/15.  Compatible with all flairs up to and including the 2nd Easter event flairs (egg and carrot).  
+Last updated 22/4/15.  Compatible with all flairs up to and including the three public game win rate flairs.  
