@@ -14,7 +14,7 @@
 
 //the name TagPro gives to each of the flairs
 var flairNames = ['special.developer', 'special.helper', 'special.supporter', 'special.supporter2', 'special.supporter3', 'special.contest', 'boards.month', 'boards.week', 'boards.day',
-    'winrate.insane', 'winrate.awesome', 'winrate.good', 'event.birthday', 'event.stPatricksDay', 'event.aprilFoolsDay', 'event.easter', 'event.hacked', 
+    'winRate.insane', 'winRate.awesome', 'winRate.good', 'event.birthday', 'event.stPatricksDay', 'event.aprilFoolsDay', 'event.easter', 'event.hacked', 
     'event.halloween', 'event.survivor', 'event.birthday2', 'event.platformer', 'event.stPatricksDay2', 'event.aprilFoolsDay2', 'event.easter2', 'event.carrot',
     'degree.bacon', 'degree.moon', 'degree.freezing', 'degree.dolphin', 'degree.alien', 'degree.roadsign', 'degree.peace', 'degree.flux', 'degree.microphone',
     'degree.boiling', 'degree.dalmatians', 'degree.abc', 'degree.love', 'degree.pokemon', 'degree.phi', 'degree.uturn', 'degree.world', 'degree.bowling', 'degree.pi'
