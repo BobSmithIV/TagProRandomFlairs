@@ -15,4 +15,4 @@ On Firefox: As above, but you should have [Greasemonkey](https://addons.mozilla.
 
 *****
 
-Last updated 22/4/15.  Compatible with all flairs up to and including the three public game win rate flairs.  
+Last updated 31/5/15.  Compatible with all event flairs up to and including the second Easter event flairs.  

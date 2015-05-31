@@ -4,7 +4,7 @@
 // @description   Randomly choose a new flair each game
 // @include       http://tagpro-*.koalabeast.com*
 // @author        BobSmithIV
-// @version       2.4
+// @version       2.5
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @downloadURL   https://raw.githubusercontent.com/BobSmithIV/TagProRandomFlairs/master/TagProRandomFlairsFirefox.user.js
@@ -13,17 +13,20 @@
 // Note that unlike in version 1.X of this script, to change which flairs to include in the flair rotation, visit your profile and tick the checkboxes of those flairs you want included. 
 
 //the name TagPro gives to each of the flairs
-var flairNames = ['special.developer', 'special.helper', 'special.supporter', 'special.supporter2', 'special.supporter3', 'special.contest', 'boards.month', 'boards.week', 'boards.day',
-    'winRate.insane', 'winRate.awesome', 'winRate.good', 'event.birthday', 'event.stPatricksDay', 'event.aprilFoolsDay', 'event.easter', 'event.hacked', 
-    'event.halloween', 'event.survivor', 'event.birthday2', 'event.platformer', 'event.stPatricksDay2', 'event.aprilFoolsDay2', 'event.easter2', 'event.carrot',
-    'degree.bacon', 'degree.moon', 'degree.freezing', 'degree.dolphin', 'degree.alien', 'degree.roadsign', 'degree.peace', 'degree.flux', 'degree.microphone',
-    'degree.boiling', 'degree.dalmatians', 'degree.abc', 'degree.love', 'degree.pokemon', 'degree.phi', 'degree.uturn', 'degree.world', 'degree.bowling', 'degree.pi'
-];
+var flairNames = ['special.developer', 'special.helper', 'special.mod', 'special.supporter', 'special.supporter2', 'special.supporter3', 'special.supporter4', 'special.contest', 
+                  'boards.month', 'boards.week', 'boards.day', 'winRate.insane', 'winRate.awesome', 'winRate.good', 
+                  'event.birthday', 'event.stPatricksDay', 'event.aprilFoolsDay', 'event.easter', 'event.hacked', 'event.halloween', 'event.survivor', 'event.birthday2', 
+                  'event.platformer', 'event.stPatricksDay2', 'event.aprilFoolsDay2', 'event.easter2', 'event.carrot', 
+                  'degree.bacon', 'degree.moon', 'degree.penguin', 'degree.freezing', 'degree.dolphin', 'degree.alien', 'degree.roadsign', 'degree.peace', 'degree.flux', 
+                  'degree.microphone', 'degree.boiling', 'degree.dalmatians', 'degree.abc', 'degree.plane', 'degree.love', 'degree.pokemon', 'degree.phi', 'degree.uturn', 
+                  'degree.world', 'degree.boiling2', 'degree.atomic', 'degree.boxing', 'degree.bowling','degree.pi'
+                 ];
+
 
 //intialize variables the first time the script is run
-if((!GM_getValue('version'))||(GM_getValue('version')!='2.4')){
+if((!GM_getValue('version'))||(GM_getValue('version')!='2.5')){
     GM_setValue('randomizeState', 'unrandomized');
-    GM_setValue('version','2.4');
+    GM_setValue('version','2.5');
     GM_setValue('savedFlairRotation', new Array(flairNames.length + 1).join('1'));
     GM_setValue('inGroup', 'f');
 }
@@ -79,7 +82,7 @@ if (document.URL.match(/groups\/./) && document.URL.search('create') < 0 && GM_g
     window.location.href = 'http://tagpro-' + GM_getValue('server') + '.koalabeast.com/profile/' + GM_getValue('profileNum');
 }
 
-//if you've been sent to the profile to randomize flairs, pick any available flair at random, then go back to where you came from
+//if you're on the profile, add the new column to allow users to select the flair rotation
 if (document.URL.search('profile') >= 0) {
     //create the new column's header:
     x = getBoard().firstChild.childNodes;
@@ -123,6 +126,7 @@ if (document.URL.search('profile') >= 0) {
         }
     }
 
+    //if you've been sent to the profile to randomize flairs, pick any available flair at random, then go back to where you came from
     if (GM_getValue('randomizeState').search('sentToRandomize') >= 0) {
         setTimeout(function() {
             //randomly select a flair to use
