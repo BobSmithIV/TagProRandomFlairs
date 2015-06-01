@@ -4,7 +4,7 @@
 // @description   Randomly choose a new flair each game
 // @include       http://tagpro-*.koalabeast.com*
 // @author        BobSmithIV
-// @version       2.6
+// @version       2.7
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @downloadURL   https://raw.githubusercontent.com/BobSmithIV/TagProRandomFlairs/master/TagProRandomFlairsFirefox.user.js
@@ -13,8 +13,8 @@
 // Note that unlike in version 1.X of this script, to change which flairs to include in the flair rotation, visit your profile and tick the checkboxes of those flairs you want included. 
 
 //the name TagPro gives to each of the flairs
-var flairNames = ['special.developer', 'special.helper', 'special.mod', 'special.supporter', 'special.supporter2', 'special.supporter3', 'special.supporter4', 'special.contest', 
-                  'boards.month', 'boards.week', 'boards.day', 'winRate.insane', 'winRate.awesome', 'winRate.good', 
+var flairNames = ['special.developer', 'special.helper', 'special.mod', 'special.supporter', 'special.supporter2', 'special.supporter3', 'special.supporter4', 'special.bitcoin', 
+                  'special.contest', 'boards.month', 'boards.week', 'boards.day', 'winRate.insane', 'winRate.awesome', 'winRate.good', 
                   'event.birthday', 'event.stPatricksDay', 'event.aprilFoolsDay', 'event.easter', 'event.hacked', 'event.halloween', 'event.survivor', 'event.birthday2', 
                   'event.platformer', 'event.stPatricksDay2', 'event.aprilFoolsDay2', 'event.easter2', 'event.carrot', 
                   'degree.bacon', 'degree.moon', 'degree.penguin', 'degree.freezing', 'degree.dolphin', 'degree.alien', 'degree.roadsign', 'degree.peace', 'degree.magma', 
@@ -24,9 +24,9 @@ var flairNames = ['special.developer', 'special.helper', 'special.mod', 'special
 
 
 //intialize variables the first time the script is run
-if((!GM_getValue('version'))||(GM_getValue('version')!='2.6')){
+if((!GM_getValue('version'))||(GM_getValue('version')!='2.7')){
     GM_setValue('randomizeState', 'unrandomized');
-    GM_setValue('version','2.6');
+    GM_setValue('version','2.7');
     GM_setValue('savedFlairRotation', new Array(flairNames.length + 1).join('1'));
     GM_setValue('inGroup', 'f');
 }
