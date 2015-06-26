@@ -4,7 +4,7 @@
 // @description   Randomly choose a new flair each game
 // @include       http://tagpro-*.koalabeast.com*
 // @author        BobSmithIV, with some code inspired by ballparts' extensions
-// @version       2.7
+// @version       2.8
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @downloadURL   https://raw.githubusercontent.com/BobSmithIV/TagProRandomFlairs/master/TagProRandomFlairsChrome.user.js
@@ -16,7 +16,7 @@
 var flairNames = ['special.developer', 'special.helper', 'special.mod', 'special.supporter', 'special.supporter2', 'special.supporter3', 'special.supporter4', 'special.bitcoin', 
                   'special.contest', 'boards.month', 'boards.week', 'boards.day', 'winRate.insane', 'winRate.awesome', 'winRate.good', 
                   'event.birthday', 'event.stPatricksDay', 'event.aprilFoolsDay', 'event.easter', 'event.hacked', 'event.halloween', 'event.survivor', 'event.birthday2', 
-                  'event.platformer', 'event.stPatricksDay2', 'event.aprilFoolsDay2', 'event.easter2', 'event.carrot', 
+                  'event.platformer', 'event.stPatricksDay2', 'event.aprilFoolsDay2', 'event.easter2', 'event.carrot', 'event.lgbt',
                   'degree.bacon', 'degree.moon', 'degree.penguin', 'degree.freezing', 'degree.dolphin', 'degree.alien', 'degree.roadsign', 'degree.peace', 'degree.magma', 
                   'degree.flux', 'degree.microphone', 'degree.boiling', 'degree.dalmatians', 'degree.abc', 'degree.plane', 'degree.love', 'degree.pokemon', 'degree.phi', 
                   'degree.uturn', 'degree.world', 'degree.boiling2', 'degree.atomic', 'degree.boxing', 'degree.bowling','degree.pi'
@@ -25,7 +25,7 @@ var flairNames = ['special.developer', 'special.helper', 'special.mod', 'special
 //intialize variables the first time the script is run
 if((!GM_getValue('version'))||(GM_getValue('version')!='2.7')){
     GM_setValue('randomizeState','unrandomized');
-    GM_setValue('version','2.7');
+    GM_setValue('version','2.8');
     GM_setValue('savedFlairRotation',new Array(flairNames.length + 1).join('1'));
 }
 

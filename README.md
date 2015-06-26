@@ -15,4 +15,4 @@ On Firefox: As above, but you should have [Greasemonkey](https://addons.mozilla.
 
 *****
 
-Last updated 1/6/15.  Compatible with all event flairs up to and including the second Easter event flairs.  
+Last updated 1/6/15.  Compatible with all event flairs up to and including the equal marriage flair.  
