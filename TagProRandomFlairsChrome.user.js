@@ -23,7 +23,8 @@ var flairNames = ['special.developer', 'special.helper', 'special.mod', 'special
                  ];
 
 //intialize variables the first time the script is run
-if((!GM_getValue('version'))||(GM_getValue('version')!='2.7')){
+if((!GM_getValue('version'))||(GM_getValue('version')!='2.8')){
+    console.log('Script updated: resetting flair rotation');
     GM_setValue('randomizeState','unrandomized');
     GM_setValue('version','2.8');
     GM_setValue('savedFlairRotation',new Array(flairNames.length + 1).join('1'));
