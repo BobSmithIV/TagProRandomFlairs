@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Random flairs
 // @namespace     http://www.github.com/BobSmithIV/
-// @description   Randomly choose a new flair each game
+// @description   Randomly choose a new flair each game.  Also contains the ability to change the favicon to your current flair.  
 // @include       http://tagpro-*.koalabeast.com*
 // @author        BobSmithIV, with some code inspired by ballparts' extensions
 // @version       3.0
