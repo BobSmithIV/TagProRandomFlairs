@@ -7,7 +7,7 @@
 // @version       2.8
 // @grant         GM_getValue
 // @grant         GM_setValue
-// @downloadURL   https://raw.githubusercontent.com/BobSmithIV/TagProRandomFlairs/master/TagProRandomFlairsFirefox.user.js
+// @downloadURL   https://raw.githubusercontent.com/BobSmithIV/TagProRandomFlairs/master/TagProRandomFlairs.user.js
 // ==/UserScript==
 
 // Note that unlike in version 1.X of this script, to change which flairs to include in the flair rotation, visit your profile and tick the checkboxes of those flairs you want included. 
