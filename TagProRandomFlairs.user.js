@@ -4,7 +4,7 @@
 // @description   Randomly choose a new flair each game.  Also contains the ability to change the favicon to your current flair.  
 // @include       http://tagpro-*.koalabeast.com*
 // @author        BobSmithIV, with some code inspired by ballparts' extensions
-// @version       3.0
+// @version       3.1
 // @grant         GM_getValue
 // @grant         GM_setValue
 // @downloadURL   https://raw.githubusercontent.com/BobSmithIV/TagProRandomFlairs/master/TagProRandomFlairs.user.js
