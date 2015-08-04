@@ -182,7 +182,7 @@ function pickNewFlair(){
     }
     // send the POST request
     xmlhttp.send('flair='+chosenFlair);
-    if (GM_getData('toggleFavicon')){
+    if (GM_getValue('toggleFavicon')){
         changeFavicon(chosenFlair);
     }
 }
