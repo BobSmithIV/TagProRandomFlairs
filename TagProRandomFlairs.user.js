@@ -168,7 +168,7 @@ function pickNewFlair(){
 
     // create the POST request to change flair
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("POST","http://tagpro-chord.koalabeast.com/profile/selectedFlair",true);
+    xmlhttp.open("POST","http://tagpro-"+GM_getValue('server')+".koalabeast.com/profile/selectedFlair",true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     // if POST is unsuccessful, alert the user
