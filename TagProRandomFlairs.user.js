@@ -29,7 +29,7 @@
             $(data).find('div#owned-flair li.flair-available').each(function () {
                 flairs.push($(this).attr('data-flair'));
             });
-            var flair = flairs[Math.floor(Math.random() * flairs.length)];
+            var flair = flairs[Math.floor(Math.random() * (flairs.length - 1))];
             $.post("/profile/selectedFlair", {flair: flair});
         });
     }
