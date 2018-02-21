@@ -19,6 +19,38 @@
         pickNewFlair();
     }
 
+    //if you're on the profile page, add the UI to allow users to select the flair rotation
+    if (document.URL.search('profile') >= 0) {
+        addCheckboxes();
+        var rotation = getCurrentRotation();
+    }
+    
+    function addCheckboxes() {
+        // add the checkboxes
+        $('.flair-item.selectable').append('<div class="randomFlairsCheckbox"><input type="checkbox"></div>');
+        // disable checkboxes for unobtained flairs
+        $('.flair-unavailable .randomFlairsCheckbox input').attr("disabled", true);
+        // set the checkboxes to match the current rotation
+        $('div#owned-flair li.flair-available').each(function(){
+            if (rotation.includes($(this).attr('data-flair'))){
+                $(this).find('input').prop('checked', true);
+            } else {
+                $(this).find('input').prop('checked', false);
+            }
+        });
+        $('<style>.profile .flair-list .flair-item { padding-bottom: 43px; } .randomFlairsCheckbox { padding-top: 3px; margin-left: 1px; width: 16px; }</style>').appendTo('head'); 
+    }
+    
+    function getCurrentRotation(){
+        var rotation = [];
+        $('div#owned-flair li.flair-available').each(function(){
+            if ($(this).find('input').is(':checked')){
+              rotation.push($(this).attr('data-flair'));
+            }
+        });
+        return rotation;
+    }
+
     function pickNewFlair() {
         console.log('was here');
         //randomly select a flair to use
