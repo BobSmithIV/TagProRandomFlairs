@@ -14,6 +14,21 @@
 (function () {
     'use strict';
 
+    // load or initialize rotation
+    var rotation = undefined;
+    if (GM_getValue('rotation')){
+        rotation = JSON.parse(GM_getValue('rotation'));
+    } else if ($('#profile-btn').length > 0) {
+        rotation = [];
+        $.ajax({
+            url: $('#profile-btn').attr('href'),
+        }).done(function (data) {
+            $(data).find('div#owned-flair li.flair-available').each(function () {
+                rotation.push($(this).attr('data-flair'));
+            });
+        });
+    }
+
     //if you're starting a new game or in a group, pick a new flair
     if (document.URL.search('games/find') >= 0 || document.URL.search('group') >= 0) {
         pickNewFlair();
@@ -27,7 +42,7 @@
     
     function addCheckboxes() {
         // add the checkboxes
-        $('.flair-item.selectable').append('<div class="randomFlairsCheckbox"><input type="checkbox"></div>');
+        $('.flair-item.selectable:not(.empty)').append('<div class="randomFlairsCheckbox" title="Include flair in random flair rotation?"><input type="checkbox"></div>');
         // disable checkboxes for unobtained flairs
         $('.flair-unavailable .randomFlairsCheckbox input').attr("disabled", true);
         // set the checkboxes to match the current rotation
@@ -40,10 +55,10 @@
         });
         $('<style>.profile .flair-list .flair-item { padding-bottom: 43px; } .randomFlairsCheckbox { padding-top: 3px; margin-left: 1px; width: 16px; }</style>').appendTo('head'); 
     }
-    
+
     function getCurrentRotation(){
         var rotation = [];
-        $('div#owned-flair li.flair-available').each(function(){
+        $('div li.flair-available').each(function(){
             if ($(this).find('input').is(':checked')){
               rotation.push($(this).attr('data-flair'));
             }
@@ -52,17 +67,8 @@
     }
 
     function pickNewFlair() {
-        console.log('was here');
-        //randomly select a flair to use
-        var flairs = [];
-        $.ajax({
-            url: $('#profile-btn').attr('href'),
-        }).done(function (data) {
-            $(data).find('div#owned-flair li.flair-available').each(function () {
-                flairs.push($(this).attr('data-flair'));
-            });
-            var flair = flairs[Math.floor(Math.random() * (flairs.length - 1))];
-            $.post("/profile/selectedFlair", {flair: flair});
-        });
+        var flair = rotation[Math.floor(Math.random() * (rotation.length - 1))];
+        $.post("/profile/selectedFlair", {flair: flair});
     }
+
 })();
